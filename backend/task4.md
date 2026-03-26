@@ -7,7 +7,7 @@
     - Lưu thông tin của cuộc gọi (sđt thực hiện cuộc gọi, sđt được gọi, thời lượng cuộc gọi, thời điểm thực hiện cuộc gọi)
 
 
-![alt text](image.png)
+![alt text](erd.png)
 
 
 
