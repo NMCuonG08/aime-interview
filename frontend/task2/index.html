@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Water Trap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>Water Trap Visualization</h2>
+
+    <div class="controls">
+        <input id="input" placeholder="VD: 3,0,2,0,4" value="3,0,2,0,4" />
+        <button onclick="handleDraw()">Visualize</button>
+    </div>
+
+    <div class="info">
+        Water trapped: <span id="result">0</span> units
+        <div id="error"></div>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="canvas" width="600" height="400"></canvas>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Draw the example on load
+        window.onload = handleDraw;
+    </script>
+</body>
+
+</html>
