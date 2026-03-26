@@ -22,7 +22,7 @@ SELECT
     u.phone_number,
     SUM(c.duration_seconds) AS total_duration
 FROM users u
-JOIN calls c ON u.phone_number = c.caller_phone
+JOIN Calls c ON u.user_id = c.caller_id 
 WHERE DATE_FORMAT(c.call_time, '%Y-%m') = DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 MONTH), '%Y-%m')
 GROUP BY u.user_id, u.full_name, u.phone_number
 ORDER BY total_duration DESC
@@ -42,8 +42,8 @@ WITH user_totals AS (
         u.full_name,
         u.phone_number,
         SUM(c.duration_seconds) AS total_duration
-    FROM users u
-    JOIN calls c ON u.phone_number = c.caller_phone
+    FROM Users u
+    JOIN Calls c ON u.user_id = c.caller_id
     GROUP BY u.user_id, u.full_name, u.phone_number
 ),
 ranked AS (
